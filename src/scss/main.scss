@@ -2,3 +2,58 @@
 @import "@webpixels/css/forms";
 @import "@webpixels/css/components";
 @import "@webpixels/css/utilities";
+
+// Define a variable for the primary color
+$primary-color: #2196F3;
+
+// Nest selectors for better organization
+.navbar {
+  background-color: $primary-color;
+  
+  .navbar-brand {
+    color: white;
+  }
+  
+  .navbar-nav {
+    li {
+      a {
+        color: white;
+        
+        &:hover {
+          color: #e9ecef;
+        }
+      }
+    }
+  }
+}
+
+// Define a mixin for button styles
+@mixin button-styles {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+// Use the mixin to apply button styles to multiple elements
+.btn-primary {
+  @include button-styles;
+  background-color: $primary-color;
+  color: white;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.btn-secondary {
+  @include button-styles;
+  background-color: #6c757d;
+  color: white;
+  
+  &:hover {
+    background-color: darken(#6c757d, 10%);
+  }
+}
